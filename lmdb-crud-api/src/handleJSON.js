@@ -34,6 +34,6 @@ const handleJSON = (request, response, db, callback) => {
 
     callback(response, db, body);
   });
-}
+};
 
 export default handleJSON;
