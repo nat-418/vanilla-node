@@ -1,0 +1,17 @@
+{
+  "license": "0BSD",
+  "main": "src/main.js",
+  "name": "lmdb-crud-api",
+  "type": "module",
+  "version": "1.0.0",
+  "dependencies": {
+    "lmdb-store": "^1.6.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "scripts": {
+    "dev":   "nodemon ./src/main.js",
+    "start": "node ./src/main.js"
+  }
+}
