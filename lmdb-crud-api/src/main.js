@@ -18,7 +18,8 @@ const route = (request, response, db, path, method) => {
           response.end();
         },
         'OPTIONS': () => {
-          response.writeHead(200, 'OK', {'Allow': allowed.join(",")});
+          const allowed = Object.keys(routes['/api/users'].methods).join(', ');
+          response.writeHead(200, 'OK', {'Allow': allowed});
           response.end();
         },
         'PATCH': () => handleJSON(request, response, db, users.mod),
