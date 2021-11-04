@@ -1,4 +1,5 @@
 node_modules
+db
 tags
 tags.lock
 tags.temp
