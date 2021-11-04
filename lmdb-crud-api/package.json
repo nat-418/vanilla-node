@@ -8,10 +8,15 @@
     "lmdb-store": "^1.6.11"
   },
   "devDependencies": {
+    "clean-jsdoc-theme": "^3.2.10",
+    "eslint": "^8.1.0",
+    "jsdoc": "^3.6.7",
     "nodemon": "^2.0.14"
   },
   "scripts": {
-    "dev":   "nodemon ./src/main.js",
+    "dev": "nodemon ./src/main.js",
+    "docs": "jsdoc --configure .jsdoc.json",
+    "lint": "eslint --fix ./src",
     "start": "node ./src/main.js"
   }
 }

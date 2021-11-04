@@ -1,3 +1,5 @@
+/** @module Main */
+
 import http       from 'http';
 import url        from 'url';
 import {open}     from 'lmdb-store';
@@ -7,12 +9,22 @@ import users      from './users.js';
 const PORT = 1222;
 const db   = open({path: 'db'});
 
+/**
+ * Match requests and responses.
+ *
+ * @param {http.IncomingMessage} request  - Node HTTP request object
+ * @param {http.ServerResponse}  response - Node HTTP request object
+ * @param {object}               db       - LMDB object
+ * @param {string} path                   - Path to the requested resource
+ * @param {string} method                 - HTTP request method (verb)
+ * @returns {void} Side-effect: serve resource
+ */
 const route = (request, response, db, path, method) => {
   const routes = {
     '/api/users': {
       methods: {
         'DELETE': () => handleJSON(request, response, db, users.del),
-        'GET':    () => getUsers(response, db),
+        'GET':    () => users.get(response, db),
         'HEAD':   () => {
           response.writeHead(200, 'OK');
           response.end();

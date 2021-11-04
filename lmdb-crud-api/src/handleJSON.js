@@ -1,5 +1,15 @@
+/** @module handleJSON */
 import {badRequest} from './replies.js';
 
+/**
+ * Read JSON data submitted in e.g. a POST request.
+ *
+ * @param {object}   request  - Node HTTP request object
+ * @param {object}   response - Node HTTP response object
+ * @param {object}   db       - LMDB object
+ * @param {function} callback - Some function to run once data is ready
+ * @returns {void}   Side-effect: serve some resource
+ */
 const handleJSON = (request, response, db, callback) => {
   const chunks = [];
 
