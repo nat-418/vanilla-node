@@ -3,7 +3,7 @@
 import http       from 'http';
 import url        from 'url';
 import {open}     from 'lmdb-store';
-import handleJSON from './handleJSON.js';
+import handleJSON from './handle-json.js';
 import users      from './users.js';
 
 const PORT = 1222;
